@@ -1,0 +1,103 @@
+* {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 0 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ec3355;
+}
+
+.wrapper {
+    max-width: 1110px;
+    width: 100%;
+    position: relative;
+}
+
+.btn-left,
+.btn-right {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.btn-left {
+    left: -14px;
+}
+
+.btn-right {
+    right: -14px;
+}
+
+.btn-left img,
+.btn-right img {
+    max-width: 100%;
+    width: 20px;
+}
+
+.wrapper .carrocel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 11px);
+    gap: 16px;
+    border-radius: 8px;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.wrapper .carrocel.dragging {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+}
+
+.wrapper .carrocel.no-transition {
+    scroll-behavior: auto;
+}
+
+.wrapper .carrocel::-webkit-scrollbar {
+    display: none;
+}
+
+.wrapper .card {
+    height: 200px;
+    display: flex;
+    scroll-snap-align: start;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.wrapper .carrocel.dragging .card {
+    user-select: none;
+    cursor: grab;
+}
+
+@media (max-width: 900px) {
+    .wrapper .carrocel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+}
+
+@media (max-width: 600px) {
+    .wrapper .carrocel {
+        grid-auto-columns: 100%;
+    }
+}

@@ -1,0 +1,338 @@
+/* **************
+    WEB FONTS
+********************* */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+
+/* **************
+    VARIAVEIS E CONFIGURAÇÃO
+****************************** */
+
+:root
+{
+    /* color */
+    --first-color: hsl(349, 83%, 58%);
+    --second-color: hsl(45, 100%, 58%);
+    --body-color: hsl(220, 100%, 99%);
+    --title-color: hsl(223, 12%, 14%);
+    --text-color: hsl(223, 12%, 20%);
+    --light-color: hsl(0, 0%, 100%);
+    --dark-color: hsl(0, 0%, 7%);
+
+    /* Shadow */
+    --box-shadow: 0 2px 8px hsla(220, 68%, 12%, .03);
+
+    /* fonts */
+    --body-font: "Poppins", sans-serif;
+
+     /* font size */
+    --body-font-size: 1rem;
+
+    /* font size weigth */
+    --body-font-weight: 1.5;
+
+    /* z-index */
+    --z-tooltip: 10;
+    --z-fixed: 100;
+
+    /* fixed heigt & width */
+    --header-height: 3.5rem;
+
+    /* radius */
+    --border-radius: 10px;
+
+    /* animation */
+    --transition-3s: 0.3s;
+    --transition-5s: 0.5s;
+
+    /* Breakpoints */
+    --desktop: 1024px;
+
+    /* Width */
+    --max-width: 1170px;
+}
+
+
+/* **************
+    BASE
+****************************** */
+*
+{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    font-family: var(--body-font);
+    font-size: var(--body-font-size);
+    line-height: var(--body-font-weight);
+    color: var(--text-color);
+    background-color: var(--body-color);
+    transition: var(--transition-5s);
+
+}
+
+input, button
+{
+    border: none;
+    outline: none;
+}
+
+ul
+{
+    list-style: none;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+img
+{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* **************
+    UTILITY CLASSES REUTILISAVEIS
+****************************** */
+/* Container & grid */
+.container
+{
+    width: 95vw;
+    max-width: 1170px;
+}
+
+.container-sm
+{
+    width: 90vw;
+    max-width: 800px;
+}
+
+.container, .container-sm
+{
+    margin: 0 auto;
+    padding: 0 1rem;
+    /* margin-inline: 1.5rem; */
+}
+
+.section {
+    padding: 5rem 0;
+  }
+
+.flex
+{
+    display: flex;
+    gap: 1rem;
+}
+
+.grid
+{
+    display: grid;
+    gap: 1rem;
+}
+
+.card
+{
+    padding: 1rem;
+    border-radius: var(--border-radius);
+}
+
+/* Components */
+.input {
+    padding: 13px 20px;
+    font-weight: var(--body-font-weight);
+    border: 1px solid;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    background-color: transparent;
+    transition: var(--transition-5s);
+}
+
+.input:focus {
+    border-color: blue;
+}
+
+.btn
+{
+    display: inline-block;
+    padding: 13px 20px;
+    font-weight: var(--body-font-weight);
+    text-align: center;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition-5s);
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn-primary {
+    background: var(--first-color);
+    color: #fff;
+}
+
+.btn-dark {
+    background: var(--dark-color);
+    color: #fff;
+}
+
+.btn-light {
+    background: var(--light-color);
+    color: #333;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* Tipografy */
+.text-xxl {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 40px 0 20px;
+}
+
+.text-xl {
+    font-size: 2.2rem;
+    line-height: 1.4;
+    font-weight: normal;
+    margin: 40px 0 20px;
+}
+
+.text-lg {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    font-weight: normal;
+    margin: 30px 0 20px;
+}
+
+.text-md {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    font-weight: normal;
+    margin: 20px 0 10px;
+}
+
+.text-sm {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    font-weight: normal;
+    margin: 10px 0 5px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/* Tamanho para Desktop */
+@media screen and (min-width: 1024px)
+{
+    .text-xxl {
+        color: var(--primary-color);
+    }
+}
+
+
+
+/* **************
+    FORMULARIO
+****************************** */
+.form-book {
+    max-width: 400px;
+    margin-bottom: 2rem;
+
+    label, input {
+        display: block;
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .form-control {
+        padding: 13px 20px;
+        font-weight: var(--body-font-weight);
+        border: 1px solid;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        background-color: transparent;
+        transition: var(--transition-5s);
+    }
+
+    
+}
+
+.table {
+    width: 100%;
+
+    thead {
+        background-color: var(--title-color);
+        width: 100%;
+    }
+
+    thead tr {
+        /* border-spacing: 0; */
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 1rem 0;
+
+        th, td {
+            border: none;
+            color: #fff;
+        }
+    }
+
+    tbody tr {
+        background-color: var(--light-color);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-bottom: 1px solid var(--dark-color);
+        align-items: center;
+        
+        td {
+            padding: 1rem 0;
+            text-align: center;
+        }
+    } 
+}
+
+.shwo-alert {
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    display: none;
+    color: #fff;
+
+}
+
+.shwo-alert.notText {
+    background-color: var(--first-color);
+    display: block;
+}
+
+.shwo-alert.adcionado {
+    background-color: rgb(0, 102, 255);
+    display: block;
+}
+
+.shwo-alert.removed {
+    background-color: var(--second-color);
+    display: block;
+}
+
+
+
+

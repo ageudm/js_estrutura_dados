@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+
+/*--------------------------------/
+    CARROCEL CSS
+/--------------------------------*/
+.carrocel {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    margin: 0 auto;
+    transform: translateY(50%);
+}
+
+.carrocel-track-container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carrocel-track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transform 250ms ease-in-out;
+}
+
+.carrocel-slide  {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.carrocel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carrocel-button {
+    position: absolute;
+    top: 50%;
+    background: transparent;
+    border: none;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.left {
+    left: -32px;
+}
+
+.right {
+    right: -32px;
+}
+
+.carrocel-button img {
+    width: 20px;
+}
+
+.carrocel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.carrocel-nav .carrocel-indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: none;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    transition: background-color .4s;
+}
+
+.carrocel-indicator.current-dot-slide {
+    background-color: #ec3355;
+}
+
+.is-hiden {
+    display: none;
+}
