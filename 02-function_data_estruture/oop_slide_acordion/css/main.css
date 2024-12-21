@@ -1,0 +1,158 @@
+/* Web fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+.acordion-item
+{
+    & .acordion-header
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 1rem;
+        background-color: var(--clr-light-1);
+        cursor: pointer;
+    }
+
+    & .acordion-body
+    {
+        background-color: var(--clr-white-2);
+    }
+}
+
+.acordion-item 
+{
+    & .acordion-body
+    {
+        height: 0;
+        /* line-height: 0; */
+        padding: 0;
+        visibility: hidden;
+        transition: height 0.5s ease;
+    }
+}
+
+
+@supports(interpolate-size: allow-keywords) {
+
+    :root 
+    {
+        interpolate-size: allow-keywords;
+    }
+
+    .acordion-item.open
+    {
+        & .icon
+        {
+            transform: rotate(180deg);
+            transition: transform 0.5s;
+        }
+
+        & .acordion-body
+        {
+            height: auto;
+            /* line-height: initial; */
+            padding: 1rem;
+            overflow: clip;
+            visibility: visible;
+            transition: height 0.5s ease;
+        }
+    }
+}
+
+
+@layer variaveis {
+    :root {
+
+        --header-height: 3.8rem;
+    
+        /* color */
+        --clr-primary: hsl(349, 83%, 56%);
+        --clr-white: hsl(0, 0%, 100%);
+        --clr-white-2: hsl(0, 1%, 99%);
+        --clr-light-1: hsl(228, 20%, 98%);
+        --clr-light-2: hsl(221, 20%, 99%);
+        --clr-darck-1: hsl(218, 35%, 6%);
+        --clr-darck-2: hsl(218, 35%, 7%);
+        --clr-darck-3: hsl(221, 20%, 5%);
+    
+        /* font-family */
+        --ff-poppins: "Poppins", sans-serif;
+        
+        /* font-size */
+        --fs-normal: .980rem;
+        --fs-grand: 1.2rem;
+    
+        /* font-weight */
+        --fw-light: 300;
+        --fw-regular: 400;
+        --fw-medium: 600;
+    }
+    
+    @media  screen and (min-width: 900px) {
+        :root{
+            --fs-normal: 1.2rem;
+            --fs-grand: 1.4rem;
+        }
+    }
+}
+
+@layer reset {
+
+    *, ::before, ::after
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body
+    {
+        font-family: var(--ff-poppins);
+        font-size: var(--fs-normal);
+        font-weight: var(--fw-light);
+        color: var(--clr-darck-2);
+        background-color: var(--clr-white);
+    }
+
+    main 
+    {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    ul, li
+    {
+        list-style: none;
+    }
+
+    a
+    {
+        text-decoration: none;
+    }
+}
+
+
+@layer util {
+    .container
+    {
+        width: 95%;
+        max-width: 900px;
+        margin-inline: auto;
+    }
+
+    .grid
+    {
+        display: grid;
+        gap: .5rem;
+    }
+
+    svg[ class="icon"]
+    {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
